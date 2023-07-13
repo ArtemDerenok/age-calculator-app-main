@@ -123,6 +123,7 @@ body {
     box-sizing: border-box;
     width: 160px;
     height: 70px;
+    color: $OFF_BLACK !important;
     border: 1px solid $LIGHT_GREY;
     border-radius: 7px;
     padding-left: 20px;
@@ -136,4 +137,9 @@ body {
       color: $SMOKE_GREY;
     }
   }
+}
+
+.error {
+  color: $LIGHT_RED;
+  border-color: $LIGHT_RED !important;
 }
