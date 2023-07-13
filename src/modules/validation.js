@@ -30,7 +30,7 @@ class Validate {
   validate(elements) {
     const result = {
       result: true,
-      date: {},
+      isDate: { isValid: true },
     };
 
     for (let i = 0; i < elements.length; i += 1) {
@@ -51,7 +51,8 @@ class Validate {
         result.result = false;
       }
 
-      result.date = dateResult;
+      result.isDate = dateResult;
+      result.date = new Date(+elements.year.value, +elements.month.value - 1, +elements.day.value);
     }
     return result;
   }

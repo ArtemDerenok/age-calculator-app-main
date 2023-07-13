@@ -5,6 +5,9 @@ const btn = document.getElementById('btn');
 const form = document.getElementById('form');
 const inputs = document.querySelectorAll('.form__input');
 const errorMsg = document.getElementById('error-msg');
+const year = document.getElementById('year');
+const month = document.getElementById('month');
+const day = document.getElementById('day');
 
 const clearErrorMessages = () => {
   inputs.forEach((elem) => {
@@ -19,9 +22,9 @@ const clearErrorMessages = () => {
 };
 
 const handleValidationResult = (result) => {
-  if (!result.date.isValid) {
+  if (!result.isDate.isValid) {
     errorMsg.classList.add('error');
-    errorMsg.innerText = result.date.message;
+    errorMsg.innerText = result.isDate.message;
   }
 
   inputs.forEach((elem) => {
@@ -35,10 +38,23 @@ const handleValidationResult = (result) => {
   });
 };
 
+const calcAge = (date) => {
+  const diff = new Date() - date;
+  const years = diff / (1000 * 60 * 60 * 24 * 30 * 12);
+  const months = (+years.toString().split('.')[1] / (1000 * 60 * 60 * 24 * 30)) % 12;
+  const days = (+months.toString().split('.')[1] / (1000 * 60 * 60 * 24)) % 30;
+
+  year.innerText = Math.floor(years);
+  month.innerText = Math.floor(months);
+  day.innerText = Math.floor(days);
+};
+
 btn.addEventListener('click', () => {
   clearErrorMessages();
   const result = validator.validate(form.elements);
   if (!result.result) {
     handleValidationResult(result);
+  } else {
+    calcAge(result.date);
   }
 });
