@@ -10,7 +10,5 @@
     "sourceType": "module"
   },
   "plugins": ["prettier"],
-  "rules": {
-    "eslint-disable class-methods-use-this": []
-  }
+  "rules": {}
 }

@@ -1,3 +1,5 @@
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["#checkData", "#checkDate"] }] */
+
 class Validate {
   #checkData(value, name) {
     const data = value.trim();
