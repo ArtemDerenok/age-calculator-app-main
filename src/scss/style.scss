@@ -1,0 +1,139 @@
+@import './variables';
+@import './normalize.scss';
+@import './reset.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Regular.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-BoldItalic.ttf');
+  font-style: italic;
+  font-weight: 800;
+}
+
+body {
+  font-family: 'Poppins';
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: $LIGHT_GREY;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  width: 835px;
+  height: 648px;
+  background-color: $WHITE;
+  border-radius: 20px 20px 140px 20px;
+  padding-left: 60px;
+  padding-top: 64px;
+  padding-right: 60px;
+
+  &__form {
+  }
+
+  &__btn-box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__line {
+    width: 87%;
+    height: 1px;
+    background-color: $LIGHT_GREY;
+  }
+
+  &__btn {
+    all: unset;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $PURPLE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $OFF_BLACK;
+    }
+  }
+
+  &__img {
+  }
+
+  &__date-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__text {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 85px;
+
+    span {
+      padding-right: 10px;
+      vertical-align: middle;
+      color: $PURPLE;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  gap: 35px;
+
+  &__input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__label {
+    text-transform: uppercase;
+    color: $SMOKE_GREY;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+  &__input {
+    all: unset;
+    box-sizing: border-box;
+    width: 160px;
+    height: 70px;
+    border: 1px solid $LIGHT_GREY;
+    border-radius: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 25px;
+    font-weight: 700;
+
+    &::placeholder {
+      font-size: 25px;
+      font-weight: 700;
+      color: $SMOKE_GREY;
+    }
+  }
+}
