@@ -25,6 +25,13 @@
   font-weight: 800;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Italic.ttf');
+  font-style: italic;
+  font-weight: 400;
+}
+
 body {
   font-family: 'Poppins';
 }
@@ -102,7 +109,12 @@ body {
 
 .form {
   display: flex;
-  gap: 35px;
+  flex-direction: column;
+
+  &__box-one {
+    display: flex;
+    gap: 35px;
+  }
 
   &__input-box {
     display: flex;
@@ -137,9 +149,87 @@ body {
       color: $SMOKE_GREY;
     }
   }
+
+  &__error-message {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    width: 160px;
+  }
 }
 
 .error {
   color: $LIGHT_RED;
   border-color: $LIGHT_RED !important;
+}
+
+@media (max-width: 849px) {
+  .calculator {
+    width: 320px;
+    height: 500px;
+    padding-left: 25px;
+    padding-top: 39px;
+    padding-right: 25px;
+    border-radius: 20px 20px 80px 20px;
+
+    &__btn-box {
+      position: relative;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    &__line {
+      width: 100%;
+      position: absolute;
+    }
+
+    &__btn {
+      position: relative;
+      z-index: 10;
+      width: 70px;
+      height: 70px;
+    }
+
+    &__img {
+      width: 25px;
+      height: 25px;
+    }
+
+    &__text {
+      font-size: 45px;
+    }
+
+    &__form {
+      margin-bottom: 25px;
+    }
+  }
+
+  .form {
+    &__box-one {
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    &__input {
+      width: 84px;
+      height: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &::placeholder {
+        font-size: 15px;
+        font-weight: 700;
+        color: $SMOKE_GREY;
+      }
+    }
+
+    &__error-message {
+      font-size: 12px;
+      font-style: italic;
+      font-weight: 400;
+      width: 84px;
+    }
+  }
 }
